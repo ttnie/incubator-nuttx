@@ -161,6 +161,7 @@ jobs:
             git config --global --add safe.directory /github/workspace/sources/apps
             cd sources/nuttx/tools/ci
             ./cibuild.sh -A -R -c testlist/${{matrix.boards}}.dat
+            ./cirun.sh -c -x testlist/${{matrix.boards}}.dat
             ccache -s
 
       - uses: actions/upload-artifact@v3
